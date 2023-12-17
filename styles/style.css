@@ -12,6 +12,10 @@
 body {
   font-family: "Lato", sans-serif;
   margin: 0;
+  transition: transform 0.3s;
+}
+body.show-nav {
+  transform: translateX(200px);
 }
 
 nav {
@@ -106,6 +110,9 @@ button, input[type=submit] {
   right: 0;
   bottom: 0;
 }
+.container-modal.modal-show {
+  display: block;
+}
 
 .modal {
   background-color: #fff;
@@ -118,6 +125,7 @@ button, input[type=submit] {
   transform: translate(-50%, -50%);
   max-width: 100%;
   width: 400px;
+  animation: modalOpen var(--modal-duration);
 }
 .modal-header {
   background-color: var(--primary-color);
@@ -152,4 +160,13 @@ button, input[type=submit] {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+@keyframes modalOpen {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=style.css.map */

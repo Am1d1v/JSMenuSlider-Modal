@@ -11,7 +11,10 @@
 body
     font-family: 'Lato', sans-serif
     margin: 0
-     
+    transition: transform 0.3s
+    &.show-nav
+        transform: translateX(200px)
+
 nav
     background-color: var(--primary-color)
     border-right: 2px solid rgba(200, 200, 200, 0.1)
@@ -89,6 +92,8 @@ button, input[type="submit"]
         left: 0
         right: 0
         bottom: 0
+        &.modal-show
+            display: block
         
 .modal
     background-color: #fff
@@ -101,6 +106,7 @@ button, input[type="submit"]
     transform: translate(-50%, -50%) 
     max-width: 100%
     width: 400px
+    animation: modalOpen var(--modal-duration)
     &-header
         background-color: var(--primary-color)
         color: #fff
@@ -120,7 +126,7 @@ button, input[type="submit"]
             margin-bottom: 5px
         .form-input
             padding: 9px
-            width: 100%
+            width: 100%        
 
 .close-btn
     background: transparent
@@ -130,6 +136,9 @@ button, input[type="submit"]
     right: 0
               
 
-
-
-
+// Keyframes
+@keyframes modalOpen
+    0%
+       opacity: 0
+    100%
+        opacity: 1          
